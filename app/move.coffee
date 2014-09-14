@@ -91,13 +91,13 @@ class Move
     this.disconnectDots(previousDot, currentDot)
 
   getCurrentDot: =>
-     @dots[@dots.length - 1]
+    @dots[@dots.length - 1]
 
   removeCurrentDot: =>
-     @dots.pop()
+    @dots.pop()
 
   getPreviousDot: =>
-     @dots[@dots.length - 2]
+    @dots[@dots.length - 2]
 
   getCurrentLine: =>
     @lines[@lines.length - 1]
