@@ -1,0 +1,23 @@
+{
+  "name": "hackstrap-brunch",
+  "description": "Bootstrap for hacks",
+  "author": "Marcin Bunsch <marcin.bunsch@gmail.com>",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test"
+  },
+  "dependencies": {
+    "coffee-script-brunch": "> 1.0 < 1.5",
+    "sass-brunch": "> 1.0 < 1.5",
+    "javascript-brunch": ">= 1.0 < 1.8",
+    "css-brunch": ">= 1.0 < 1.8",
+    "uglify-js-brunch": ">= 1.0 < 1.8",
+    "clean-css-brunch": ">= 1.0 < 1.8",
+    "auto-reload-brunch": ">= 1.0 < 1.8"
+  }
+}

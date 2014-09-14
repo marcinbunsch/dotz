@@ -1,0 +1,148 @@
+@font-face
+  font-family: 'josefin-bold'
+  src: url('../fonts/josefinsans-bold-webfont.eot')
+  src: url('../fonts/josefinsans-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/josefinsans-bold-webfont.woff2') format('woff2'),url('../fonts/josefinsans-bold-webfont.woff') format('woff'),url('../fonts/josefinsans-bold-webfont.ttf') format('truetype'),url('../fonts/josefinsans-bold-webfont.svg#josefin_sansbold') format('svg')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'josefin-regular'
+  src: url('../fonts/josefinsans-regular-webfont.eot')
+  src: url('../fonts/josefinsans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/josefinsans-regular-webfont.woff2') format('woff2'),url('../fonts/josefinsans-regular-webfont.woff') format('woff'),url('../fonts/josefinsans-regular-webfont.ttf') format('truetype'),url('../fonts/josefinsans-regular-webfont.svg#josefin_sansregular') format('svg')
+  font-weight: normal
+  font-style: normal
+
+body
+  color: #333
+  font-family: josefin-regular, "Helvetica"
+
+#wrapper
+  margin: 0 auto
+  width: 640px
+
+#start-screen
+
+  text-align: center
+
+  .logo
+    margin-top: 200px
+    font-size: 80px
+    margin-bottom: 150px
+
+#game-screen
+  display: none
+
+
+#topbar
+  z-index: 50
+  position: absolute
+  top: 0px
+  height: 100px
+  width: 640px
+  background-color: #fff
+
+  .limitation, .score
+    margin-top: 20px
+    float: left
+    width: 150px
+    text-align: left
+
+    .label
+      position: relative
+      top: -10px
+      color: #999
+
+    .count
+      margin-left: 10px
+      font-size: 45px
+
+  .limitation
+    margin-left: 50px
+
+  .score
+    float: right
+    margin-right: 10px
+
+  .goals
+    float: left
+    height: 100px
+    width: 440px
+
+  .noop
+    float: left
+    width: 100px
+    height: 100px
+    background-color: #dcdde0
+    border-bottom-right-radius: 30px
+    border-top-left-radius: 30px
+
+#scorebar
+  height: 60px
+  background-color: #efefef
+
+  .score
+    background-color: #efefef
+    width: 138px
+    height: 60px
+    position: absolute
+    margin-top: -60px
+    left: 50%
+    margin-left: -69px
+    border-top-right-radius: 75px
+    border-top-left-radius: 75px
+
+    .text
+      text-align: center
+      margin-top: 10px
+      font-size: 45px
+
+  .progress
+
+    .line
+      border-bottom: 2px solid #ccc
+      height: 30px
+      margin-top: 10px
+
+.popup-background
+  display: none
+  position: fixed
+  z-index: 100
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  opacity: 0.5
+  background-color: #ccc
+
+.popup
+  display: none
+  position: fixed
+  z-index: 101
+  top: 50%
+  left: 50%
+  height: 250px
+  width: 500px
+  margin-top: -125px
+  margin-left: -250px
+  border-radius: 20px
+  background-color: #fff
+
+  .contents
+    padding: 20px
+    text-align: center
+
+    p
+      font-size: 18px
+      margin: 30px 00px
+
+a.button
+  display: block
+  margin: 0 auto
+  width: 200px
+  padding: 10px
+  border-radius: 20px
+  color: #fff
+  cursor: pointer
+  font-family: josefin-bold, "Helvetica"
+  font-size: 20px
+

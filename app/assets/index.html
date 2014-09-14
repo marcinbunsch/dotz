@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+
+    <title>Dotz</title>
+
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link rel="apple-touch-icon" href="images/ios.icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="images/ios.icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/ios.icon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/ios.icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  </head>
+  <body>
+    <div class="popup-background"></div>
+    <div class="popup">
+      <div class="contents">
+        <h1>Game Over</h1>
+        <p>You scored <span class="result">0</span> points.</p>
+        <div class="start">
+          <a class="button">Start new game</a>
+        </div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="start-screen">
+        <div class="logo">Dotz</div>
+        <div class="start">
+          <a class="button">Start new game</a>
+        </div>
+      </div>
+      <div id="game-screen">
+        <div id="topbar">
+          <div class="limitation">
+            <span class="label">Moves</span>
+            <span class="count">0</span>
+          </div>
+          <div class="score">
+            <span class="label">Score</span>
+            <span class="count">0</span>
+          </div>
+        </div>
+        <div id="game"></div>
+      </div>
+    </div>
+
+    <script src="js/vendor.js"></script>
+    <script src="js/game.js"></script>
+    <script>require('initialize')</script>
+  </body>
+</html>
+
