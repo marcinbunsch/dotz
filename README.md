@@ -2,6 +2,8 @@
 
 A just for fun clone of Dots, a game by Betaworks. It only includes a single level with a 20 move limit.
 
+You can read more in the [accompanying blog post](www.bunsch.pl/2014/09/14/dotz/).
+
 ## Building
 
 ```bash
