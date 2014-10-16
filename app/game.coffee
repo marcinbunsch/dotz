@@ -27,6 +27,7 @@ class Game
     @level = options.level || new Level()
     @score = 0
     @moves = @level.moves
+    @dots = []
 
   dispose: =>
     @level = null
@@ -87,6 +88,12 @@ class Game
       column: column
     })
     dot.draw()
+    @dots.push dot
+
+  removeDot: (dot) =>
+    index = @dots.indexOf(dot)
+    @dots.splice(index, 1)
+    dot.destroy()
 
 module.exports = Game
 

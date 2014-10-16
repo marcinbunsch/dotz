@@ -12,14 +12,29 @@ class Move
 
   complete: =>
     Crafty.removeEvent this, Crafty.stage.elem, "mouseup", this.complete
+    if this.squarePresent()
+      this.addAllSameColoredDots()
     this.destroyDots()
     this.destroyAllLines()
     this.updateGameState()
     this.dispose()
 
+  squarePresent: =>
+    groupedDots = this.getGroupedDots()
+    for id, dots of groupedDots
+      return true if dots.length > 1
+    return false
+
+  addAllSameColoredDots: =>
+    uniqueDots = this.getUniqueDots()
+    @game.dots.forEach (dot) =>
+      if dot.color == @color and !uniqueDots[dot.id]
+        @dots.push(dot)
+
   updateGameState: =>
     if @dots.length > 1
-      @game.addPoints(@dots.length * 10)
+      dotCount = this.getUniqueDotCount()
+      @game.addPoints(dotCount * 10)
       @game.subtractMove()
 
   dispose: =>
@@ -30,21 +45,46 @@ class Move
 
   destroyDots: =>
     if @dots.length > 1
+      replacements = []
       uniqueDots = this.getUniqueDots()
-      iterator = 0
+      iterator = {}
       for id, dot of uniqueDots
-        iterator += 1
-        dot.destroy()
-        this.addReplacementDot(dot.column, iterator)
+        column = dot.column
+        iterator[column] ||= 0
+        iterator[column] += 1
+        this.removeDot(dot)
+        replacements.push({
+          column: column,
+          iterator: iterator[column]
+        })
+      replacements.forEach (data) =>
+        this.addReplacementDot(data.column, data.iterator)
 
   addReplacementDot: (column, index) =>
     @game.addDotAt(-index, column)
+
+  removeDot: (dot) =>
+    @game.removeDot(dot)
 
   getUniqueDots: =>
     uniqueDots = {}
     for index, dot of @dots
       uniqueDots[dot.id] = dot
     uniqueDots
+
+  getGroupedDots: =>
+    uniqueDots = {}
+    for index, dot of @dots
+      uniqueDots[dot.id] ||= []
+      uniqueDots[dot.id].push(dot)
+    uniqueDots
+
+  getUniqueDotCount: =>
+    uniqueDots = this.getUniqueDots()
+    count = 0
+    for index, dot of uniqueDots
+      count++
+    count
 
   destroyAllLines: =>
     for line in @lines
