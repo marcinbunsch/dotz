@@ -1,6 +1,6 @@
 Colors = require('colors')
 Entity = require('entity')
-Move = require('move')
+Move = require('move_with_squares')
 
 class Dot extends Entity
 

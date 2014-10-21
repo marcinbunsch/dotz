@@ -12,24 +12,10 @@ class Move
 
   complete: =>
     Crafty.removeEvent this, Crafty.stage.elem, "mouseup", this.complete
-    if this.squarePresent()
-      this.addAllSameColoredDots()
     this.destroyDots()
     this.destroyAllLines()
     this.updateGameState()
     this.dispose()
-
-  squarePresent: =>
-    groupedDots = this.getGroupedDots()
-    for id, dots of groupedDots
-      return true if dots.length > 1
-    return false
-
-  addAllSameColoredDots: =>
-    uniqueDots = this.getUniqueDots()
-    @game.dots.forEach (dot) =>
-      if dot.color == @color and !uniqueDots[dot.id]
-        @dots.push(dot)
 
   updateGameState: =>
     if @dots.length > 1
@@ -174,3 +160,4 @@ class Move
     @dots.push(dot)
 
 module.exports = Move
+
